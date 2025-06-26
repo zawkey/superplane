@@ -3,9 +3,10 @@ import semaphoreLogo from "../images/semaphore-logo-sign-black.svg";
 import icnProjectNav from "../images/icn-project-nav.svg";
 import icnMenu from "../images/icn-menu.svg";
 import profileImg from "../images/profile.jpg";
-const Navigation = () => {
+const Navigation = ({ isOrgView = false }) => {
   const [isFlowMenuOpen, setIsFlowMenuOpen] = React.useState(false);
   const [isOrgDropdownOpen, setIsOrgDropdownOpen] = React.useState(false);
+
 
   const toggleFlowMenu = () => {
     setIsFlowMenuOpen(!isFlowMenuOpen);
@@ -25,7 +26,7 @@ const Navigation = () => {
                     <img src={semaphoreLogo} alt="Semaphore Logo" className="h-6" width={26} />
                     <strong className="ml2 f3 black-90">SuperPlane</strong>
                 </a>
-               <nav aria-label="Breadcrumb" class="ml3 bl b--black-10 pl3">
+               <nav className={isOrgView ? "" : "hidden"} aria-label="Breadcrumb" class="ml3 bl b--black-10 pl3">
                   <ol role="list" class="flex items-center">
                       
                       <li>
@@ -263,11 +264,11 @@ const Navigation = () => {
                 
                 
                  
-                 <div class="pl2 pl3-m bl b--black-15 pointer flex-shrink-0 pr2" data-micromodal-trigger="js-org-sidebar">
+                 <div className={"pl2 pl3-m bl b--black-15 pointer flex-shrink-0 pr2 " + (isOrgView ? "" : "hidden")} data-micromodal-trigger="js-org-sidebar">
                 
-                    <button class="pointer relative hover-bg-washed-brown pv1 ph2 br3 flex items-center js-dropdown-menu-trigger btn-link f4 mx-2" data-template="roleSelector" aria-expanded="false" onClick={toggleOrgDropdown}>
+                    <button className="pointer relative hover-bg-washed-brown pv1 ph2 br3 flex items-center js-dropdown-menu-trigger btn-link f4 mx-2" data-template="roleSelector" aria-expanded="false" onClick={toggleOrgDropdown}>
                         <span>Zorana's org</span>
-                        <span class="ml1 material-symbols-outlined" style={{ fontSize: '18px' }}>expand_more</span>
+                        <span className="ml1 material-symbols-outlined" style={{ fontSize: '18px' }}>expand_more</span>
                     </button>
                     <div className={isOrgDropdownOpen ? "block" : "hidden"}>
                       <div className="dropdown-menu absolute bg-gray white-80 br3">

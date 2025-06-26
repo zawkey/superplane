@@ -8,12 +8,12 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/workflow');
+    navigate('/organizations');
   };
 
   return (
-    <div className="login-wrapper h-full flex flex-col items-center bg-washed-gray br3 justify-start pt6 px-4 sm:px-6 lg:px-8">
-      <div className="flex items-center mb5">
+    <div className="login-wrapper h-full flex flex-col items-center bg-washed-gray br3 justify-start pt5 px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center mb4">
         <img src={semaphoreLogo} alt="Semaphore Logo" className="h-6" width={26} /> <spanc className="ml2 f2 b">SuperPlane</spanc></div>
       <div className="max-w-md w-full bg-white pa4 br3 shadow-sm ba b--black-10">
         <div>
@@ -21,7 +21,7 @@ const Login = () => {
             Log in to SuperPlane
           </h3>
         </div>
-        <form className="mt-8" onSubmit={handleSubmit}>
+        <form className="mt4" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm mb-6">
             <div className='mb4'>
             <button type="submit" className="bg-near-white btn btn-secondary btn-large w-full text-center inline-flex items-center justify-center">

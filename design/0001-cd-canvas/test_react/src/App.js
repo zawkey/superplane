@@ -4,6 +4,7 @@ import './index.css';
 import './App.css';
 import WorkflowEditor from './WorkflowEditor';
 import Login from './components/Login';
+import Organizations from './components/Organizations';
 
 function App() {
   return (
@@ -15,6 +16,11 @@ function App() {
               <Login />
             </main>
             } />
+          <Route path="/organizations" element={
+            <main className="flex-grow flex flex-col">
+              <Organizations />
+            </main>
+            } />
           <Route 
             path="/workflow" 
             element={
@@ -24,6 +30,11 @@ function App() {
             }
           />
           <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/workflow" element={
+            <main className="flex-grow flex flex-col">
+              <WorkflowEditor />
+            </main>
+            } />
         </Routes>
       </div>
     </Router>
