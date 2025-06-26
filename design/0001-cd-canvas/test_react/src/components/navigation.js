@@ -17,11 +17,18 @@ const Navigation = () => {
                   <ol role="list" class="flex items-center">
                       
                       <li>
-                             <a href="#" class="dark-indigo">Workspace</a>
+                             <a href="#" class="dark-indigo">My Flows</a>
                       </li>
-                      <li>
+                      <li className="flex items-center">
                         <span className="inline-block px-2">/</span>
-                             <a href="#" class="b">My workflow</a>
+                        <a href="#" class="my-flow b flex items-center"><span>Flow 1</span> <i className="material-icons" style={{ fontSize: '16px' }}>expand_more</i></a>
+                        <div className="hidden">
+                          <div className="flow-menu">
+                            <a href="#">Flow 1</a>
+                            <a href="#">Flow 2</a>
+                            <a href="#">Flow 3</a>
+                          </div>
+                        </div>
                       </li>
                   </ol>
               </nav>
@@ -151,7 +158,12 @@ const Navigation = () => {
             </div>
             
             <div class="flex items-center flex-shrink-0">
-                
+              f<div class="ph1 ph2 br-ns b--black-10">
+                    <div class="flex flex-shrink-0 pv1 ph1 ph2-ns br3 pointer hover-bg-washed-brown js-dropdown-color-trigger bl b--black-10" data-template="helpMenu">
+                        <i className="material-icons" style={{ fontSize: '26px' }}>support</i>
+                        <span class="dn ml2 b">Help</span>
+                    </div>
+                </div>
                  
                 <div class="dn">
                     <div class="flex flex-shrink-0 pv1 ph1 ph2-ns br3 pointer hover-bg-washed-brown js-dropdown-color-trigger" data-template="feedbackMenu">
@@ -177,12 +189,7 @@ const Navigation = () => {
                 <div class="flex-shrink-0 pa1 ma1 pointer bg-animate hover-bg-washed-brown br-100 js-dropdown-color-trigger" data-template="profileMenu">
                     <img src={profileImg} alt="Jeff Jones" width="24" height="24" class="f7 db br-100 ba b--black-50"/>
                 </div>
-                <div class="ph1 ph2 br-ns b--black-10">
-                    <div class="flex flex-shrink-0 pv1 ph1 ph2-ns br3 pointer hover-bg-washed-brown js-dropdown-color-trigger bl b--black-10" data-template="helpMenu">
-                        <i className="material-icons" style={{ fontSize: '26px' }}>support</i>
-                        <span class="dn ml2 b">Help</span>
-                    </div>
-                </div>
+               
             </div>
 
     </div>
