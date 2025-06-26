@@ -1,8 +1,20 @@
+import React from 'react';
 import semaphoreLogo from "../images/semaphore-logo-sign-black.svg";
 import icnProjectNav from "../images/icn-project-nav.svg";
 import icnMenu from "../images/icn-menu.svg";
 import profileImg from "../images/profile.jpg";
 const Navigation = () => {
+  const [isFlowMenuOpen, setIsFlowMenuOpen] = React.useState(false);
+  const [isOrgDropdownOpen, setIsOrgDropdownOpen] = React.useState(false);
+
+  const toggleFlowMenu = () => {
+    setIsFlowMenuOpen(!isFlowMenuOpen);
+  };
+
+  const toggleOrgDropdown = () => {
+    setIsOrgDropdownOpen(!isOrgDropdownOpen);
+  };
+
   return (
     <div class="header" id="js-header">
         
@@ -20,15 +32,87 @@ const Navigation = () => {
                              <a href="#" class="dark-indigo">My Flows</a>
                       </li>
                       <li className="flex items-center">
-                        <span className="inline-block px-2">/</span>
-                        <a href="#" class="my-flow b flex items-center"><span>Flow 1</span> <i className="material-icons" style={{ fontSize: '16px' }}>expand_more</i></a>
-                        <div className="hidden">
-                          <div className="flow-menu">
-                            <a href="#">Flow 1</a>
-                            <a href="#">Flow 2</a>
-                            <a href="#">Flow 3</a>
-                          </div>
+                        <span className="inline-block px-2 relative">/</span>
+                        <a href="#" class="my-flow b flex items-center" onClick={toggleFlowMenu}><span>Flow 1</span> <i className="material-icons" style={{ fontSize: '16px' }}>expand_more</i></a>
+                        <div className={"projects-menu-results absolute pa3 bg-white top-[48px] pr3 nr3 pb3 " + (isFlowMenuOpen ? "block" : "hidden")} onClick={(e) => e.stopPropagation()}>
+                            <input className='w-100 pa2 mb2 form-control' type="text" placeholder="Search flows"/>
+                            <p className="f7 mb0 gray">Keyboard shortcut: "/"</p>
+                            
+                            <div className="f5 b mt3 mb1 pt2 bt b--black-10">Starred</div>
+                            
+                            <ul className="list pl0 mb0">
+                                <li>
+                                    <a href="project.html">app-design</a>
+                                    <div className="projects-menu-unstar"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">coding-interview-university</a>
+                                    <div className="projects-menu-unstar"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">dispatch</a>
+                                    <div className="projects-menu-unstar"></div>
+                                </li>
+                            </ul>
+                            
+                            <div className="f5 b mt3 mb1 pt2 bt b--black-10">My flows</div>
+                            <ul className="list pl0 mb0">
+                                <li>
+                                    <a className='bg-lightest-blue' href="project.html">Flow 1</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">Flow 2</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">nndl.github.io</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">free-for-dev</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">dnSpy</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">computer-science</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">nndl.github.io</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">free-for-dev</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">dnSpy</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">computer-science</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">nndl.github.io</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">free-for-dev</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                                <li>
+                                    <a href="project.html">dnSpy</a>
+                                    <div className="projects-menu-star"></div>
+                                </li>
+                            </ul>
+                           
                         </div>
+                       
                       </li>
                   </ol>
               </nav>
@@ -66,15 +150,15 @@ const Navigation = () => {
                                 </li>
                             </ul>
                             
-                            <div class="f5 b mt3 mb1 pt2 bt b--black-10">My projects</div>
-                            <ul class="list pl0 mb0">
+                            <div className="f5 b mt3 mb1 pt2 bt b--black-10">My projects</div>
+                            <ul className="list pl0 mb0">
                                 <li>
                                     <a href="project.html">magento2</a>
-                                    <div class="projects-menu-star"></div>
+                                    <div className="projects-menu-star"></div>
                                 </li>
                                 <li>
                                     <a href="project.html">computer-science</a>
-                                    <div class="projects-menu-star"></div>
+                                    <div className="projects-menu-star"></div>
                                 </li>
                                 <li>
                                     <a href="project.html">nndl.github.io</a>
@@ -158,8 +242,8 @@ const Navigation = () => {
             </div>
             
             <div class="flex items-center flex-shrink-0">
-              f<div class="ph1 ph2 br-ns b--black-10">
-                    <div class="flex flex-shrink-0 pv1 ph1 ph2-ns br3 pointer hover-bg-washed-brown js-dropdown-color-trigger bl b--black-10" data-template="helpMenu">
+              <div class="ph1 ph2">
+                    <div class="flex flex-shrink-0 pv1 ph1 ph2-ns br3 pointer hover-bg-washed-brown js-dropdown-color-trigger" data-template="helpMenu">
                         <i className="material-icons" style={{ fontSize: '26px' }}>support</i>
                         <span class="dn ml2 b">Help</span>
                     </div>
@@ -179,12 +263,20 @@ const Navigation = () => {
                 
                 
                  
-                 <div class="pl2 pl3-m pv2 bl b--black-15 pointer flex-shrink-0 pr2 mr2 br b--black-10" data-micromodal-trigger="js-org-sidebar">
+                 <div class="pl2 pl3-m bl b--black-15 pointer flex-shrink-0 pr2" data-micromodal-trigger="js-org-sidebar">
                 
-                    <button class="pointer flex items-center js-dropdown-menu-trigger btn-link f4 mx-2" data-template="roleSelector" aria-expanded="false">
+                    <button class="pointer relative hover-bg-washed-brown pv1 ph2 br3 flex items-center js-dropdown-menu-trigger btn-link f4 mx-2" data-template="roleSelector" aria-expanded="false" onClick={toggleOrgDropdown}>
                         <span>Zorana's org</span>
                         <span class="ml1 material-symbols-outlined" style={{ fontSize: '18px' }}>expand_more</span>
                     </button>
+                    <div className={isOrgDropdownOpen ? "block" : "hidden"}>
+                      <div className="dropdown-menu absolute bg-gray white-80 br3">
+                        <a href="#" className='block pa2 hover-bg-black-40'>Organization 1</a>
+                        <a href="#" className='block pa2 hover-bg-black-40'>Organization 2</a>
+                        <a href="#" className='block pa2 hover-bg-black-40'>Organization 3</a>
+                        <a href="#" className='block pa2 hover-bg-black-40'>Manage Organizations</a>
+                      </div>
+                    </div>
                 </div>
                 <div class="flex-shrink-0 pa1 ma1 pointer bg-animate hover-bg-washed-brown br-100 js-dropdown-color-trigger" data-template="profileMenu">
                     <img src={profileImg} alt="Jeff Jones" width="24" height="24" class="f7 db br-100 ba b--black-50"/>
