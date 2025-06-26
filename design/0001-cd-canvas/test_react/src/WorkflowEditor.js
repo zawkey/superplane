@@ -1988,7 +1988,7 @@ function WorkflowEditor() {
       </div>
       {renderDragPreview()}
      
-      <button
+      <button className='hidden'
         onClick={handleExport}
         style={{ position: 'absolute', top: 4, right: 8, zIndex: 1000, background: '#222', color: 'white', padding: '8px 16px', borderRadius: 4, border: 'none', fontWeight: 600, cursor: 'pointer', boxShadow: '0 2px 8px rgba(128,128,128,0.20)' }}
       >

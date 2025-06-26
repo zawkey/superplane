@@ -1076,3 +1076,12 @@ main {
   animation: flip-smooth 1.5s ease-in-out infinite;
   transform-origin: center;
 }
+#projectsMenu {
+  display: none;
+}
+.projects-menu-results {
+  max-height: calc(100vh - 160px);
+}
+.export-as-image{
+  display: none!important;
+}
