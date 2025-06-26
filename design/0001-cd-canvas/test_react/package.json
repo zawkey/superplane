@@ -11,6 +11,7 @@
     "html-to-image": "^1.11.13",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",
     "reactflow": "^11.11.4",
     "tippy.js": "^6.3.7",
