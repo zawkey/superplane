@@ -34,12 +34,15 @@ const Organizations = () => {
 
   return (
     <div>
-        <Navigation/>
+        <div className="mb4">
+        <Navigation isOrgView={true}/>
+        </div>
     
-    <div className="flex justify-center pv4">
-      <div className="bg-near-white w-100 mw8 pa4 br3 ba b--black-10">
+    <div className="flex justify-center pa4">
+      <div className="bg-near-white w-100 pa4 br3 ba b--black-10">
+        <h2 className="f3">Hey Zorana! 👋</h2>
         <p className="mb4 f5">
-          Hey Zorana! How's it going?<br />
+          
           <span className="gray">Select one of your organizations to continue:</span>
         </p>
         <div className="flex flex-wrap items-start">
@@ -48,7 +51,7 @@ const Organizations = () => {
               key={org.id}
               className="org-card bg-white br2 ba b--black-10 flex flex-column justify-between mr3 mb3 pointer grow"
               style={{ width: '200px' }}
-              onClick={() => navigate('/workflow')}
+              onClick={() => navigate(`/organizations/${org.id}`)}
             >
               <div className="pa3">
                 <div className="org-avatar bg-dark-gray white br-100 flex items-center justify-center mb3" style={{ width: '32px', height: '32px' }}>

@@ -5,7 +5,7 @@ import './App.css';
 import WorkflowEditor from './WorkflowEditor';
 import Login from './components/Login';
 import Organizations from './components/Organizations';
-
+import OrganizationPage from './components/organizationPage';
 function App() {
   return (
     <Router>
@@ -33,6 +33,11 @@ function App() {
           <Route path="/workflow" element={
             <main className="flex-grow flex flex-col">
               <WorkflowEditor />
+            </main>
+            } />
+          <Route path="/organizations/:orgId" element={
+            <main className="flex-grow flex flex-col">
+              <OrganizationPage />
             </main>
             } />
         </Routes>

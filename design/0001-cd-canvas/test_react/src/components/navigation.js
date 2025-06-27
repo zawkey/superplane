@@ -26,7 +26,7 @@ const Navigation = ({ isOrgView = false }) => {
                     <img src={semaphoreLogo} alt="Semaphore Logo" className="h-6" width={26} />
                     <strong className="ml2 f3 black-90">SuperPlane</strong>
                 </a>
-               <nav className={isOrgView ? "" : "hidden"} aria-label="Breadcrumb" class="ml3 bl b--black-10 pl3">
+               <nav className={isOrgView ? "hidden" : ""} aria-label="Breadcrumb" class="ml3 bl b--black-10 pl3">
                   <ol role="list" class="flex items-center">
                       
                       <li>
@@ -264,7 +264,7 @@ const Navigation = ({ isOrgView = false }) => {
                 
                 
                  
-                 <div className={"pl2 pl3-m bl b--black-15 pointer flex-shrink-0 pr2 " + (isOrgView ? "" : "hidden")} data-micromodal-trigger="js-org-sidebar">
+                 <div className={"pl2 pl3-m bl b--black-15 pointer flex-shrink-0 pr2 " + (isOrgView ? "hidden" : "")} data-micromodal-trigger="js-org-sidebar">
                 
                     <button className="pointer relative hover-bg-washed-brown pv1 ph2 br3 flex items-center js-dropdown-menu-trigger btn-link f4 mx-2" data-template="roleSelector" aria-expanded="false" onClick={toggleOrgDropdown}>
                         <span>Zorana's org</span>
